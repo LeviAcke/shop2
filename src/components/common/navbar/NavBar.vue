@@ -1,6 +1,6 @@
 <template>
   <div class="nav-bar">
-    <div class="left">
+    <div class="left" @click="goback">
       <slot name="left">
         <img src="~assets/images/left.png" alt="" />
       </slot>
@@ -15,8 +15,18 @@
 </template>
 
  <script>
+import { useRouter } from "vue-router";
 export default {
   name: "NavBar",
+  setup() {
+    const router = useRouter();
+    const goback = () => {
+      router.go(-1);
+    };
+    return {
+      goback,
+    };
+  },
 };
 </script> 
  <style scoped lang='less'>
@@ -32,6 +42,7 @@ export default {
   line-height: 45px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   color: #fff;
+  z-index: 12;
   .left,
   .right {
     width: 60px;

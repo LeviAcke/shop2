@@ -46,6 +46,8 @@
   right: 0;
   left: 0;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+  background-color: #fff;
   .tab-bar-item {
     flex: 1;
     height: 50px;
